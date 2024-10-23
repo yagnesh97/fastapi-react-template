@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  api:
+    container_name: api
+    build:
+      dockerfile: Dockerfile
+    expose:
+      - 8000
+    env_file:
+      - ./.env
+    restart: always
+
+  nginx:
+    container_name: nginx
+    image: nginx:1.25.3-bookworm
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - 80:80
+    depends_on:
+      - api
+    restart: always
