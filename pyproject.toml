@@ -2,7 +2,7 @@
 name = "fastapi template"
 version = "1.0.0"
 description = "A scalable, optimized starter template with best practices for fast development and deployment."
-authors = ["Yagnesh Vakharia <yagnesh@letsalign.com>"]
+authors = ["Yagnesh Vakharia <yagneshvakharia97@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/yagnesh97/fastapi-template"
