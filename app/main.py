@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 
 from app.config import app_description, app_title, app_version, settings
+from app.routers.auth import auth
 from app.routers.utils import utils
 from app.utilities.logger import logger
 
@@ -51,6 +52,12 @@ async def process_time_log_middleware(request: Request, call_next: F) -> Respons
     )
     return response
 
+
+app.include_router(
+    auth.router,
+    prefix="/v1/auth",
+    tags=["auth"],
+)
 
 app.include_router(
     utils.router,
