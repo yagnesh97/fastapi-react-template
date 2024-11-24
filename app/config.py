@@ -17,6 +17,9 @@ class Settings(BaseSettings):
     environment: str = "production"
     logging_level: str = "INFO"
     root_path: str = ""
+    mongo_uri: str
+    mongo_db: str
+    secret_key: str
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
