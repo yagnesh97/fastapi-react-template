@@ -1,29 +1,37 @@
-version: "3.8"
-
 services:
-  database:
-    container_name: database
+  mongo:
     build:
-      dockerfile: database.Dockerfile
+      context: ./database
+      dockerfile: Dockerfile
     ports:
       - 27017:27017
     env_file:
-      - ./.db.env
+      - ./database/.env
     volumes:
-      - ./mongo/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+      - ./database/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
       - db_data:/data/db
     restart: always
 
+  redis:
+    image: redis:alpine
+    env_file:
+      - ./database/.env
+    ports:
+      - 6379:6379
+    command: /bin/sh -c "redis-server --requirepass $$REDIS_PASSWORD"
+    restart: always
+
   api:
-    container_name: api
     build:
-      dockerfile: api.Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
       - 8000:8000
     env_file:
-      - ./.env
+      - ./backend/.env
     depends_on:
-      - database
+      - mongo
+      - redis
     restart: always
 
 volumes:
