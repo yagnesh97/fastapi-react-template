@@ -1,5 +1,16 @@
 # FastAPI + React TypeScript Template
 
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104.0-009688.svg?logo=fastapi)](https://fastapi.tiangolo.com)
+[![React](https://img.shields.io/badge/React-18-61DAFB.svg?logo=react)](https://reactjs.org)
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB.svg?logo=python)](https://www.python.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6.svg?logo=typescript)](https://www.typescriptlang.org)
+[![MongoDB](https://img.shields.io/badge/MongoDB-6-47A248.svg?logo=mongodb)](https://www.mongodb.com)
+[![Redis](https://img.shields.io/badge/Redis-7-DC382D.svg?logo=redis)](https://redis.io)
+[![Docker](https://img.shields.io/badge/Docker-🐋-2496ED.svg?logo=docker)](https://www.docker.com)
+[![Poetry](https://img.shields.io/badge/Poetry-1.6-60A5FA.svg?logo=poetry)](https://python-poetry.org)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 A modern web application template using FastAPI for the backend API, React TypeScript for the frontend, MongoDB as the database, and Redis for caching.
 
 ## Table of Contents
